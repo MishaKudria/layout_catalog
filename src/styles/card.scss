@@ -1,0 +1,135 @@
+.button {
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  color: $color-white;
+  text-transform: uppercase;
+  line-height: $height-button-box;
+  font-size: $font-md;
+}
+
+/* Сетка карточек */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 50px 40px;
+  gap: 46px 48px;
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Карточка */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 408px;
+
+  margin: 0;
+  box-sizing: border-box;
+  border: $border-card;
+  padding: $padding-card;
+  border-radius: $border-radius-card-sm;
+  transition: transform 300ms;
+
+  &__title {
+    margin-bottom: $margin-bottom-card;
+    font-optical-sizing: auto;
+    font-weight: $font-weight-medium;
+    font-size: $font-sm;
+    line-height: $line-height-md;
+    color: $color-text-main;
+  }
+
+  &__code {
+    font-optical-sizing: auto;
+    font-size: $font-xs;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-sm;
+    color: $color-text-secondary;
+    margin-bottom: $margin-bottom-code;
+  }
+
+  &__image {
+    display: block;
+    height: $height-image;
+    padding-left: $padding-left-right-image;
+    padding-right: $padding-left-right-image;
+    width: $image-width;
+    margin-bottom: $margin-bottom-image;
+  }
+
+  &__review {
+    font-weight: $font-weight-regular;
+    font-size: $font-xs;
+    line-height: $line-height-sm;
+    color: $color-text-main;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $margin-bottom-price;
+  }
+
+  &__price-name {
+    color: $color-text-secondary;
+    font-size: $font-sm;
+    line-height: $line-height-md;
+  }
+
+  &__price-cost {
+    color: $color-text-main;
+    font-size: 18px;
+    line-height: $line-height-md;
+    font-weight: $font-weight-bold;
+  }
+
+  &__review-block {
+    display: flex;
+    align-items: center;
+    gap: $gap-review-block;
+    margin-bottom: $margin-bottom-review-block;
+  }
+
+  &__button-box {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary-hover;
+    border: $border-button-box;
+    height: $height-button-box;
+    width: $button-box-width;
+    border-radius: $border-radius-button-box-sm;
+  }
+
+  &__button-box:hover {
+    background-color: $color-white;
+    border: $border-hover;
+  }
+
+  &__button-box:hover .button {
+    color: #34568b;
+  }
+}
+
+/* Навигация */
+.nav__link-item {
+  text-decoration: none;
+  color: $color-text-main;
+  font-weight: $font-weight-medium;
+
+  &.is-active {
+    color: $color-primary-hover;
+  }
+}
