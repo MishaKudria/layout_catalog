@@ -9,8 +9,7 @@
 
 .catalog {
   display: flex;
-  justify-self: center;
-  align-items: center;
+  justify-content: center;
 }
 
 .cards {
@@ -37,16 +36,22 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: $card-width;
   height: 408px;
-
   margin: 0;
   box-sizing: border-box;
   border: $border-card;
   padding: $padding-card;
   border-radius: $border-radius-card-sm;
-  transition: transform 300ms;
-  transition: none;
+  transition: all 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+
+    &__title {
+      color: $color-card-title-hover; // #34568b
+    }
+  }
 
   &__title {
     margin-bottom: $margin-bottom-card;
@@ -75,31 +80,6 @@
     margin-bottom: $margin-bottom-image;
   }
 
-  &__review {
-    font-weight: $font-weight-regular;
-    font-size: $font-xs;
-    line-height: $line-height-sm;
-    color: $color-text-main;
-  }
-
-  &__price {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: $margin-bottom-price;
-  }
-
-  &__price-name {
-    color: $color-text-secondary;
-    font-size: $font-sm;
-    line-height: $line-height-md;
-  }
-
-  &__price-cost {
-    color: $color-text-main;
-    line-height: $line-height-md;
-    font-weight: $font-weight-bold;
-  }
-
   &__review-block {
     display: flex;
     align-items: center;
@@ -107,34 +87,42 @@
     margin-bottom: $margin-bottom-review-block;
   }
 
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $margin-bottom-price;
+
+    &-name {
+      color: $color-text-secondary;
+      font-size: $font-sm;
+      line-height: $line-height-md;
+    }
+
+    &-cost {
+      color: $color-text-main;
+      line-height: $line-height-md;
+      font-weight: $font-weight-bold;
+    }
+  }
+
   &__button-box {
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-primary-hover;
+    background-color: $color-primary-hover; // #00acdc
     border: $border-button-box;
     height: $height-button-box;
     width: $button-box-width;
     border-radius: $border-radius-button-box-sm;
-  }
+    transition: all 300ms;
 
-  &__button-box:hover {
-    background-color: $color-white;
-    border: $border-hover;
-  }
+    &:hover {
+      background-color: $color-white;
+      border: $border-hover;
 
-  &__button-box:hover .button {
-    color: #34568b;
-  }
-}
-
-.nav__link-item {
-  text-decoration: none;
-  color: $color-text-main;
-  font-weight: $font-weight-medium;
-
-  &.is-active {
-    color: $color-primary-hover;
+      .button {
+        color: $color-primary-hover; // #00acdc
+      }
+    }
   }
 }
