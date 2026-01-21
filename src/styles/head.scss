@@ -7,12 +7,6 @@
   --black: #000;
 }
 
-html {
-  font-family: Roboto, Arial, serif;
-  font-style: normal;
-  font-weight: 500;
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -44,6 +38,7 @@ html {
   display: flex;
   font-size: 12px;
   color: var(--black);
+
   text-transform: uppercase;
   position: relative;
 }
